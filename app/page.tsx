@@ -1,5 +1,6 @@
 // import CardList from '@/components/feature/card/CardList';
 import { MathForm } from '@/components/feature/form/MathForm';
+import HomePage from '@/components/pages';
 
 const fetchAllArticles = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || '', {
@@ -15,7 +16,7 @@ export default async function Home() {
 
   return (
     <main>
-      <MathForm />
+      <HomePage />
     </main>
   );
 }
