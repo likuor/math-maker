@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,28 +21,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Link } from 'lucide-react';
-
-const formSchema = z.object({
-  amount: z.number().min(10, {
-    message: '問題数は最低でも10問以上です',
-  }),
-  digits: z.number().min(1, {
-    message: '1桁以上から選べます',
-  }),
-  types: z.string().min(1),
-});
+import { mathFormSchema } from '@/schema/form';
 
 export function MathForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof mathFormSchema>>({
+    resolver: zodResolver(mathFormSchema),
     defaultValues: {
       amount: 10,
       digits: 3,
       types: '0',
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof mathFormSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);

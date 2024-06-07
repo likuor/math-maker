@@ -1,5 +1,5 @@
-import CardList from '@/components/feature/card/CardList';
-import { MathForm } from '@/components/feature/form/Form';
+// import CardList from '@/components/feature/card/CardList';
+import { MathForm } from '@/components/feature/form/MathForm';
 
 const fetchAllArticles = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || '', {
