@@ -22,8 +22,19 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { mathFormSchema } from '@/schema/form';
+import { generateRandomQuestions } from '@/lib/generateRandomQuestions';
+import { Dispatch, SetStateAction, useState } from 'react';
 
-export function MathForm() {
+type Question = {
+  equation: string;
+  answer: number;
+};
+
+type Props = {
+  setQuestions: Dispatch<SetStateAction<Question[]>>;
+};
+
+export function MathForm({ setQuestions }: Props) {
   const form = useForm<z.infer<typeof mathFormSchema>>({
     resolver: zodResolver(mathFormSchema),
     defaultValues: {
@@ -35,7 +46,8 @@ export function MathForm() {
   function onSubmit(values: z.infer<typeof mathFormSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    const res: Question[] = generateRandomQuestions(values);
+    setQuestions(res);
   }
 
   return (
