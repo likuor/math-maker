@@ -28,13 +28,14 @@ import { Dispatch, SetStateAction, useState } from 'react';
 type Question = {
   equation: string;
   answer: number;
+  id: number;
 };
 
 type Props = {
-  setQuestions: Dispatch<SetStateAction<Question[]>>;
+  setQuestions: Dispatch<SetStateAction<Question[][]>>;
 };
 
-export function MathForm({ setQuestions }: Props) {
+export const MathForm = ({ setQuestions }: Props) => {
   const form = useForm<z.infer<typeof mathFormSchema>>({
     resolver: zodResolver(mathFormSchema),
     defaultValues: {
@@ -43,10 +44,9 @@ export function MathForm({ setQuestions }: Props) {
       types: '0',
     },
   });
-  function onSubmit(values: z.infer<typeof mathFormSchema>) {
-    const res: Question[] = generateRandomQuestions(values);
-    setQuestions(res);
-  }
+  const onSubmit = (values: z.infer<typeof mathFormSchema>) => {
+    setQuestions(generateRandomQuestions(values));
+  };
 
   return (
     <Form {...form}>
@@ -123,4 +123,4 @@ export function MathForm({ setQuestions }: Props) {
       </form>
     </Form>
   );
-}
+};
