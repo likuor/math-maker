@@ -108,9 +108,10 @@ export function MathForm({ setQuestions }: Props) {
                     <SelectItem value='1'>-</SelectItem>
                     <SelectItem value='2'>×</SelectItem>
                     <SelectItem value='3'>÷</SelectItem>
-                    <SelectItem value='4'>+と-</SelectItem>
+                    {/* TODO 活性化させる */}
+                    {/* <SelectItem value='4'>+と-</SelectItem>
                     <SelectItem value='5'>×と÷</SelectItem>
-                    <SelectItem value='6'>すべて</SelectItem>
+                    <SelectItem value='6'>すべて</SelectItem> */}
                   </SelectContent>
                 </Select>
                 <FormMessage />
