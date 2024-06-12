@@ -22,8 +22,19 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { mathFormSchema } from '@/schema/form';
+import { generateRandomQuestions } from '@/lib/generateRandomQuestions';
+import { Dispatch, SetStateAction, useState } from 'react';
 
-export function MathForm() {
+type Question = {
+  equation: string;
+  answer: number;
+};
+
+type Props = {
+  setQuestions: Dispatch<SetStateAction<Question[]>>;
+};
+
+export function MathForm({ setQuestions }: Props) {
   const form = useForm<z.infer<typeof mathFormSchema>>({
     resolver: zodResolver(mathFormSchema),
     defaultValues: {
@@ -33,15 +44,13 @@ export function MathForm() {
     },
   });
   function onSubmit(values: z.infer<typeof mathFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    const res: Question[] = generateRandomQuestions(values);
+    setQuestions(res);
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-        <h1>ようこそmath makerへ</h1>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
         <div className='flex flex-row gap-2'>
           <FormField
             control={form.control}
@@ -99,9 +108,10 @@ export function MathForm() {
                     <SelectItem value='1'>-</SelectItem>
                     <SelectItem value='2'>×</SelectItem>
                     <SelectItem value='3'>÷</SelectItem>
-                    <SelectItem value='4'>+と-</SelectItem>
+                    {/* TODO 活性化させる */}
+                    {/* <SelectItem value='4'>+と-</SelectItem>
                     <SelectItem value='5'>×と÷</SelectItem>
-                    <SelectItem value='6'>すべて</SelectItem>
+                    <SelectItem value='6'>すべて</SelectItem> */}
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -109,7 +119,7 @@ export function MathForm() {
             )}
           />
         </div>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>問題を作成</Button>
       </form>
     </Form>
   );
