@@ -1,5 +1,3 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 export const mathFormSchema = z.object({
@@ -8,8 +6,8 @@ export const mathFormSchema = z.object({
     .min(10, {
       message: '問題数は最低でも10問以上です',
     })
-    .max(500, {
-      message: '問題数は最大で500問です',
+    .max(100, {
+      message: '問題数は最大で100問です',
     }),
   digits: z
     .number()
