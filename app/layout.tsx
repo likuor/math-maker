@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '../components/layouts/header/Header';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -17,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body>
         <Header />
-        {children}
+        <main className='flex justify-center min-h-[100vh]'>
+          <div className='w-[84%]'>{children}</div>
+        </main>
       </body>
     </html>
   );
