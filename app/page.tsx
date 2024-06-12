@@ -14,9 +14,5 @@ const fetchAllArticles = async () => {
 export default async function Home() {
   // const allArticles = await fetchAllArticles();
 
-  return (
-    <main>
-      <HomePage />
-    </main>
-  );
+  return <HomePage />;
 }

@@ -44,16 +44,13 @@ export function MathForm({ setQuestions }: Props) {
     },
   });
   function onSubmit(values: z.infer<typeof mathFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     const res: Question[] = generateRandomQuestions(values);
     setQuestions(res);
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-        <h1>ようこそmath makerへ</h1>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
         <div className='flex flex-row gap-2'>
           <FormField
             control={form.control}
@@ -121,7 +118,7 @@ export function MathForm({ setQuestions }: Props) {
             )}
           />
         </div>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>問題を作成</Button>
       </form>
     </Form>
   );

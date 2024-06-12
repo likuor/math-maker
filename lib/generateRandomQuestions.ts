@@ -31,25 +31,25 @@ export const generateRandomQuestions = ({ amount, digits, types }: Props) => {
     if (types === '0') {
       // 足し算
       problem = {
-        equation: `${num1} + ${num2}`,
+        equation: `${num1} + ${num2} =`,
         answer: num1 + num2,
       };
     } else if (types === '1') {
       // 引き算
       problem = {
-        equation: `${num1} - ${num2}`,
+        equation: `${num1} - ${num2} =`,
         answer: num1 - num2,
       };
     } else if (types === '2') {
       // 掛け算
       problem = {
-        equation: `${num1} × ${num2}`,
+        equation: `${num1} × ${num2} =`,
         answer: num1 * num2,
       };
     } else if (types === '3') {
       // 割り算
       problem = {
-        equation: `${num1} ÷ ${num2}`,
+        equation: `${num1} ÷ ${num2} =`,
         answer: num1 / num2,
       };
     }
