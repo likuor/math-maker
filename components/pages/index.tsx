@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { MathForm } from '../feature/form/MathForm';
 import { Button } from '../ui/button';
+import PDFSection from '../feature/PDF/PDFSection';
 
 type Question = {
   equation: string;
@@ -37,7 +38,7 @@ const HomePage = () => {
               {questionsCol.map((question: Question) => (
                 <div key={question.id}>
                   <span>
-                    問題{question.id + 1}: {question.equation}
+                    問題{question.id + 1}. {question.equation}
                   </span>
                   {isShownAnswers && (
                     <span className='text-destructive'> {question.answer}</span>
@@ -47,6 +48,7 @@ const HomePage = () => {
             </div>
           ))}
         </div>
+        {questions.length > 0 && <PDFSection questions={questions} />}
       </div>
     </div>
   );
