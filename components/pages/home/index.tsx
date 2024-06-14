@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MathForm } from '../feature/form/MathForm';
-import { Button } from '../ui/button';
-import PDFSection from '../feature/PDF/PDFSection';
+import { MathForm } from '../../feature/form/MathForm';
+import { Button } from '../../ui/button';
+import PDFSection from '../../feature/PDF/PDFSection';
 
 type Question = {
   equation: string;
@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <div className='space-y-6'>
-      <h1 className='font-bold text-xl'>ようこそMath Makerへ</h1>
+      <h1 className='text-2xl font-bold'>ようこそMath Makerへ</h1>
       <MathForm setQuestions={setQuestions} />
       <div className='space-y-6'>
         {questions.length > 0 && (

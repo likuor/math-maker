@@ -21,9 +21,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { mathFormSchema } from '@/schema/form';
+import { mathFormSchema } from '@/schema/form/mathFormSchema';
 import { generateRandomQuestions } from '@/lib/generateRandomQuestions';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 type Question = {
   equation: string;
