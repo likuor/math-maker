@@ -12,15 +12,15 @@ const Header = () => {
           <nav className='flex items-center space-x-6 text-sm'>
             <Link
               className='font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
-              href='/'
-            >
-              Home
-            </Link>
-            <Link
-              className='font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
               href='/about'
             >
               About
+            </Link>
+            <Link
+              className='font-medium text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50'
+              href='/contact'
+            >
+              Contact
             </Link>
             <Link
               className='bg-black py-3 px-4 text-white rounded-md font-medium'

@@ -1,4 +1,4 @@
-import HomePage from '@/components/pages/index';
+import HomePage from '@/components/pages/home/index';
 
 const Home = async () => <HomePage />;
 

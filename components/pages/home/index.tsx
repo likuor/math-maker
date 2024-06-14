@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MathForm } from '../feature/form/MathForm';
-import { Button } from '../ui/button';
-import PDFSection from '../feature/PDF/PDFSection';
+import { MathForm } from '../../feature/form/MathForm';
+import { Button } from '../../ui/button';
+import PDFSection from '../../feature/PDF/PDFSection';
 
 type Question = {
   equation: string;
