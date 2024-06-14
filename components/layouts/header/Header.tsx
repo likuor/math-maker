@@ -7,7 +7,7 @@ const Header = () => {
       <div className='px-4 py-3 md:py-6 lg:px-6'>
         <div className='flex items-center space-y-2 md:space-x-6 md:space-y-0'>
           <Link href='/' className='mr-4 text-2xl font-bold tracking-tighter'>
-            Bulletin Board
+            Math Maker
           </Link>
           <nav className='flex items-center space-x-6 text-sm'>
             <Link
@@ -21,12 +21,6 @@ const Header = () => {
               href='/contact'
             >
               Contact
-            </Link>
-            <Link
-              className='rounded-md bg-black px-4 py-3 font-medium text-white'
-              href='/bbs-posts/create'
-            >
-              Create Post
             </Link>
           </nav>
         </div>
