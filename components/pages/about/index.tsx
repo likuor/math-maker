@@ -10,7 +10,7 @@ const AboutPage = () => {
         Math
         Makerでは、子供たちが楽しく学べる算数の環境を提供することを信条としています。当プラットフォームは、子供たちがインタラクティブかつ楽しく算数のスキルを向上させるためのカスタマイズ可能な算数ドリルを提供しています。
       </p>
-      <div className='grid grid-cols-3 gap-6'>
+      <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
         <Card>
           <CardHeader>
             <CardTitle>カスタマイズ可能な算数ドリル</CardTitle>
@@ -41,9 +41,9 @@ const AboutPage = () => {
             </p>
           </CardContent>
         </Card>
-        <h2 className='mb-2 text-xl font-bold'>お問い合わせ</h2>
       </div>
-      <div className='space-y-6'>
+      <div>
+        <h2 className='text-2xl font-bold'>お問い合わせ</h2>
         <p>
           質問やフィードバックがありましたら、
           <Link href='/contact' className='text-blue-500'>
