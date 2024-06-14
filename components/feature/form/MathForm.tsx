@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -12,18 +12,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { mathFormSchema } from "@/schema/form/mathFormSchema";
-import { generateRandomQuestions } from "@/lib/generateRandomQuestions";
-import { Dispatch, SetStateAction } from "react";
+} from '@/components/ui/select';
+import { mathFormSchema } from '@/schema/form/mathFormSchema';
+import { generateRandomQuestions } from '@/lib/generateRandomQuestions';
+import { Dispatch, SetStateAction } from 'react';
 
 type Question = {
   equation: string;
@@ -41,7 +41,7 @@ export const MathForm = ({ setQuestions }: Props) => {
     defaultValues: {
       amount: 10,
       digits: 3,
-      types: "0",
+      types: '0',
     },
   });
   const onSubmit = (values: z.infer<typeof mathFormSchema>) => {
@@ -50,19 +50,19 @@ export const MathForm = ({ setQuestions }: Props) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="flex flex-row gap-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+        <div className='flex flex-row gap-2'>
           <FormField
             control={form.control}
-            name="amount"
+            name='amount'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>問題数</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="shadcn"
+                    placeholder='shadcn'
                     {...field}
-                    type="number"
+                    type='number'
                     onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
@@ -72,15 +72,15 @@ export const MathForm = ({ setQuestions }: Props) => {
           />
           <FormField
             control={form.control}
-            name="digits"
+            name='digits'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>数字の桁数</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="shadcn"
+                    placeholder='shadcn'
                     {...field}
-                    type="number"
+                    type='number'
                     onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
@@ -90,24 +90,21 @@ export const MathForm = ({ setQuestions }: Props) => {
           />
           <FormField
             control={form.control}
-            name="types"
+            name='types'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>問題の種類</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select a verified email to display" />
+                      <SelectValue placeholder='Select a verified email to display' />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="0">+</SelectItem>
-                    <SelectItem value="1">-</SelectItem>
-                    <SelectItem value="2">×</SelectItem>
-                    <SelectItem value="3">÷</SelectItem>
+                    <SelectItem value='0'>+</SelectItem>
+                    <SelectItem value='1'>-</SelectItem>
+                    <SelectItem value='2'>×</SelectItem>
+                    <SelectItem value='3'>÷</SelectItem>
                     {/* TODO 活性化させる */}
                     {/* <SelectItem value='4'>+と-</SelectItem>
                     <SelectItem value='5'>×と÷</SelectItem>
@@ -119,7 +116,7 @@ export const MathForm = ({ setQuestions }: Props) => {
             )}
           />
         </div>
-        <Button type="submit">問題を作成</Button>
+        <Button type='submit'>問題を作成</Button>
       </form>
     </Form>
   );
