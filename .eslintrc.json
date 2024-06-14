@@ -1,3 +1,56 @@
+// TODO arbandbのlintいれたい
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": "warn",
+    "camelcase": "off",
+    "no-unused-vars": "warn",
+
+    // functional componentの定義をarrow functionで書く
+    "func-style": "error",
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+
+    // import の順番を整理
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"], "object"],
+        "pathGroups": [
+          {
+            "pattern": "",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-unused-modules": [
+      "off",
+      {
+        "unusedExports": true
+      }
+    ]
+  }
 }
