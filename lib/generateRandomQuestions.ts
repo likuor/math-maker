@@ -1,5 +1,5 @@
-import { mathFormSchema } from '@/schema/form/mathFormSchema';
-import { z } from 'zod';
+import { mathFormSchema } from "@/schema/form/mathFormSchema";
+import { z } from "zod";
 
 type Props = z.infer<typeof mathFormSchema>;
 
@@ -29,28 +29,28 @@ export const generateRandomQuestions = ({ amount, digits, types }: Props) => {
     const num2 = getRandomInt(min, max);
     let problem = {} as Question;
 
-    if (types === '0') {
+    if (types === "0") {
       // 足し算
       problem = {
         equation: `${num1} + ${num2} =`,
         answer: num1 + num2,
         id: i,
       };
-    } else if (types === '1') {
+    } else if (types === "1") {
       // 引き算
       problem = {
         equation: `${num1} - ${num2} =`,
         answer: num1 - num2,
         id: i,
       };
-    } else if (types === '2') {
+    } else if (types === "2") {
       // 掛け算
       problem = {
         equation: `${num1} × ${num2} =`,
         answer: num1 * num2,
         id: i,
       };
-    } else if (types === '3') {
+    } else if (types === "3") {
       // 割り算
       problem = {
         equation: `${num1} ÷ ${num2} =`,
