@@ -16,7 +16,7 @@ const RootLayout = ({
     <html lang='en'>
       <body>
         <Header />
-        <main className='flex justify-center min-h-[100vh]'>
+        <main className='flex justify-center min-h-[100vh] py-10'>
           <div className='w-[84%]'>{children}</div>
         </main>
       </body>
