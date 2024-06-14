@@ -1,11 +1,4 @@
-import {
-  Page,
-  Text,
-  View,
-  Document,
-  StyleSheet,
-  Font,
-} from "@react-pdf/renderer";
+import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
 type Question = {
   equation: string;
@@ -18,14 +11,14 @@ type Props = {
 };
 
 Font.register({
-  family: "NotoSansJP",
+  family: 'NotoSansJP',
   fonts: [
     {
-      src: "/fonts/NotoSansJP-Regular.ttf",
+      src: '/fonts/NotoSansJP-Regular.ttf',
     },
     {
-      src: "/fonts/NotoSansJP-Bold.ttf",
-      fontWeight: "bold",
+      src: '/fonts/NotoSansJP-Bold.ttf',
+      fontWeight: 'bold',
     },
   ],
 });
@@ -34,22 +27,22 @@ const styles = StyleSheet.create({
   page: {
     padding: 30,
     fontSize: 11,
-    fontFamily: "NotoSansJP",
+    fontFamily: 'NotoSansJP',
   },
   header: {
     fontSize: 24,
     marginBottom: 10,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   questionsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 6,
   },
   questionColumn: {
     // make 5 columns
-    flex: "1 0 18%",
+    flex: '1 0 18%',
     padding: 6,
     marginBottom: 10,
   },
@@ -58,14 +51,14 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   answer: {
-    color: "red",
+    color: 'red',
   },
 });
 
 const PDF = ({ questions }: Props) => {
   return (
     <Document>
-      <Page size="A3" style={styles.page} orientation="landscape">
+      <Page size='A3' style={styles.page} orientation='landscape'>
         <View>
           <Text style={styles.header}>問題をといてみよう！</Text>
         </View>
