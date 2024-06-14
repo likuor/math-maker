@@ -1,4 +1,4 @@
-import { mathFormSchema } from '@/schema/form';
+import { mathFormSchema } from '@/schema/form/mathFormSchema';
 import { z } from 'zod';
 
 type Props = z.infer<typeof mathFormSchema>;
