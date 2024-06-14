@@ -14,8 +14,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { contactFormSchema } from '@/schema/form/contactFormSchema';
 import { Textarea } from '@/components/ui/textarea';
+import { contactFormSchema } from '@/schema/form/contactFormSchema';
 
 const ContactPage = () => {
   const form = useForm<z.infer<typeof contactFormSchema>>({

@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -21,9 +22,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { mathFormSchema } from '@/schema/form/mathFormSchema';
 import { generateRandomQuestions } from '@/lib/generateRandomQuestions';
-import { Dispatch, SetStateAction } from 'react';
+import { mathFormSchema } from '@/schema/form/mathFormSchema';
 
 type Question = {
   equation: string;

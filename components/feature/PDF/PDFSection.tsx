@@ -1,7 +1,8 @@
 'use client';
 
-import PDF from '@/components/feature/PDF/PDF';
 import dynamic from 'next/dynamic';
+
+import PDF from '@/components/feature/PDF/PDF';
 
 type Question = {
   equation: string;
