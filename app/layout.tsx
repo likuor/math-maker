@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 import './globals.css';
 import Header from '../components/layouts/header/Header';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +25,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='en'>
-      <body>
+      <body className={inter.className}>
         <Header />
         <main className='flex min-h-[100vh] justify-center py-10'>
           <div className='w-[84%]'>{children}</div>
