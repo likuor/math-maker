@@ -1,23 +1,25 @@
 import { MetadataRoute } from 'next';
 
+import config from '@/lib/config';
+
 const sitemap = (): Promise<MetadataRoute.Sitemap> => {
   const lastModified = new Date();
 
   return Promise.resolve([
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+      url: `${config.appBaseUrl}`,
       lastModified,
       // changeFrequency: 'monthly',
       // priority: 0.8,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/about`,
+      url: `${config.appBaseUrl}/about`,
       lastModified,
       // changeFrequency: 'monthly',
       // priority: 0.8,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/contact`,
+      url: `${config.appBaseUrl}/contact`,
       lastModified,
       // changeFrequency: 'monthly',
       // priority: 0.8,
