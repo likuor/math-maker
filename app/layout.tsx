@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
-// import Analytics from '@/components/feature/SEO/Analytics';
-import GoogleTagManager from '@/components/feature/SEO/GoogleTagManager';
+import Analytics from '@/components/feature/SEO/Analytics';
 
 import Header from '../components/layouts/header/Header';
 
@@ -32,8 +31,7 @@ const RootLayout = ({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        {/* <Analytics /> */}
-        <GoogleTagManager />
+        <Analytics />
         <Header />
         <main className='flex min-h-[100vh] justify-center py-10'>
           <div className='w-[84%]'>{children}</div>
