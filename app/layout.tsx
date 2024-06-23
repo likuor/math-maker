@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   keywords:
     '算数, 算数ドリル, 子供向け, 教育, 学習, 算数学習, 算数教育, Math Maker, カスタマイズ可能',
   twitter: { card: 'summary_large_image' },
+  verification: {
+    google: `${process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE}`,
+  },
 };
 
 const RootLayout = ({
