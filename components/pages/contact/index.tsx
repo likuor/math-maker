@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import useContact from '@/components/feature/contact/hooks';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -18,6 +19,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { contactFormSchema } from '@/schema/form/contactFormSchema';
 
 const ContactPage = () => {
+  const { handleSubmit } = useContact();
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -26,14 +28,10 @@ const ContactPage = () => {
       context: '',
     },
   });
-  const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
-    // TODO: Implement form submission
-    console.log(values);
-  };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-6'>
         <h1 className='text-2xl font-bold'>お問い合わせ</h1>
         <div className='flex flex-col gap-2'>
           <FormField
