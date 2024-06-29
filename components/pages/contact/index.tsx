@@ -25,7 +25,8 @@ const ContactPage = () => {
     defaultValues: {
       name: '',
       email: '',
-      context: '',
+      subject: '',
+      message: '',
     },
   });
 
@@ -62,6 +63,7 @@ const ContactPage = () => {
                   <Input
                     placeholder='例) yourname@gmail.com'
                     {...field}
+                    type='email'
                     onChange={(e) => field.onChange(e.target.value)}
                   />
                 </FormControl>
@@ -71,7 +73,25 @@ const ContactPage = () => {
           />
           <FormField
             control={form.control}
-            name='context'
+            name='subject'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>件名</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='例) 〇〇について'
+                    {...field}
+                    type='text'
+                    onChange={(e) => field.onChange(e.target.value)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='message'
             render={({ field }) => (
               <FormItem>
                 <FormLabel>お問い合わせ内容</FormLabel>

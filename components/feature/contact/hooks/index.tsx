@@ -5,8 +5,6 @@ import { contactFormSchema } from '@/schema/form/contactFormSchema';
 
 const useContact = () => {
   const handleSubmit = async (values: z.infer<typeof contactFormSchema>) => {
-    // TODO: Implement form submission
-    console.log(values);
     try {
       const result = await emailjs.send(
         `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
@@ -15,7 +13,7 @@ const useContact = () => {
         `${process.env.NEXT_PUBLIC_PUBLIC_KEY}`,
       );
       if (result.status !== 200) return { data: 'something wrong' };
-      // return router.reload();
+      // TODO トースト表示する
     } catch (error) {
       return error;
     }
