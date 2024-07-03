@@ -1,1 +1,1 @@
-https://math-worksheets-maker.vercel.app/
+https://math-maker-worksheets.vercel.app/
