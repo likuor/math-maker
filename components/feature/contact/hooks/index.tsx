@@ -7,10 +7,10 @@ const useContact = () => {
   const handleSubmit = async (values: z.infer<typeof contactFormSchema>) => {
     try {
       const result = await emailjs.send(
-        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
+        `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
+        `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}`,
         values,
-        `${process.env.NEXT_PUBLIC_PUBLIC_KEY}`,
+        `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`,
       );
       if (result.status !== 200) return { data: 'something wrong' };
       // TODO トースト表示する
