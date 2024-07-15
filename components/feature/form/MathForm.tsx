@@ -57,7 +57,7 @@ export const MathForm = ({ setQuestions }: Props) => {
             name='amount'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>問題数</FormLabel>
+                <FormLabel text='問題数' />
                 <FormControl>
                   <Input
                     placeholder='shadcn'
@@ -75,7 +75,7 @@ export const MathForm = ({ setQuestions }: Props) => {
             name='digits'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>数字の桁数</FormLabel>
+                <FormLabel text='数字の桁数' />
                 <FormControl>
                   <Input
                     placeholder='shadcn'
@@ -93,7 +93,7 @@ export const MathForm = ({ setQuestions }: Props) => {
             name='types'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>問題の種類</FormLabel>
+                <FormLabel text='問題の種類' />
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
