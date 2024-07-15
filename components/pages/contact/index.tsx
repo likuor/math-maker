@@ -40,9 +40,10 @@ const ContactPage = () => {
             name='name'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>お名前</FormLabel>
+                <FormLabel required text='お名前' />
                 <FormControl>
                   <Input
+                    required
                     placeholder='例) コンタクト花子'
                     {...field}
                     type='text'
@@ -58,9 +59,10 @@ const ContactPage = () => {
             name='email'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>メールアドレス</FormLabel>
+                <FormLabel required text='メールアドレス' />
                 <FormControl>
                   <Input
+                    required
                     placeholder='例) yourname@gmail.com'
                     {...field}
                     type='email'
@@ -76,9 +78,10 @@ const ContactPage = () => {
             name='subject'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>件名</FormLabel>
+                <FormLabel required text='件名' />
                 <FormControl>
                   <Input
+                    required
                     placeholder='例) 〇〇について'
                     {...field}
                     type='text'
@@ -94,9 +97,10 @@ const ContactPage = () => {
             name='message'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>お問い合わせ内容</FormLabel>
+                <FormLabel required text='お問い合わせ内容' />
                 <FormControl>
                   <Textarea
+                    required
                     placeholder='500文字以内で、お問い合わせ内容を入力してください'
                     {...field}
                     onChange={(e) => field.onChange(e.target.value)}
